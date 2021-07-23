@@ -39,33 +39,18 @@ if __name__ == "__main__":
         session.store_local(match)
 
     # Pick up line with their personal name so it doesn't look spammy
-    pickup_line = "Hey {}! Hast du Lust mit mit ne Pizza essen zu gehen oder magst du keine Pizza?"
+    pickup_line = "Hey {}! Hast du Lust mit mir eine Pizza essen zu gehen oder magst du keine Pizza?"
 
     # loop through my new matches and send them the first message of the conversation
     for match in new_matches:
         # store name and chatid in variables so we can use it more simply later on
         name = match.get_name()
         id = match.get_chat_id()
-
         print(name, id)
-
         # Format the match her/his name in your pickup line for a more personal approach.
         message = pickup_line.format(name)
-
         # send pick up line with their name in it to all my matches
         session.send_message(chatid=id, message=message)
-
-        # send a funny gif
-        # session.send_gif(chatid=id, gifname="")
-
-        # send a funny song
-        # session.send_song(chatid=id, songname="")
-
-        # send instagram or other socials like facebook, phonenumber and snapchat
-        # session.send_socials(chatid=id, media=Socials.INSTAGRAM, value="insta")
-
-        # you can also unmatch
-        #session.unmatch(chatid=id)
 
     # let's scrape some geomatches now
     for _ in range(5):
