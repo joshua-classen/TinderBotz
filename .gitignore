@@ -5,3 +5,7 @@ data/
 tinderbotz.egg-info
 dist
 build
+
+.venv
+tinderbotz/__pycache__/
+tinderbotz/helpers/__pycache__/
