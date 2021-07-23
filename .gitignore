@@ -9,3 +9,6 @@ build
 .venv
 tinderbotz/__pycache__/
 tinderbotz/helpers/__pycache__/
+
+
+config.json
