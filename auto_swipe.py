@@ -7,15 +7,15 @@ Definitly take a look at quickstart.py for more features!
 
 from tinderbotz.session import Session
 from tinderbotz.helpers.constants_helper import *
+from tinderbotz.config import Config
 
 if __name__ == "__main__":
 
     # creates instance of session
     session = Session()
     
-    # replace this with your own email and password!
-    email = "example@gmail.com"
-    password = "password123"
+    email = Config['login']
+    password = Config['password']
     
     # login using either your facebook account or google account (delete the line of code you don't need)
     session.login_using_facebook(email, password)

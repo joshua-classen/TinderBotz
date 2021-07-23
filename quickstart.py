@@ -10,56 +10,17 @@ from tinderbotz.config import Config
 if __name__ == "__main__":
     # creates instance of session
     session = Session()
-    # Or if you want to use a proxy
-    # AUTHORISED BY IP -> "HOST:PORT"
-    # AUTHORISED BY USERNAME, PASSWORD -> "username:password@HOST:PORT"
-    session = Session(proxy="23.23.23.23:3128")
-
     # set location (Don't need to be logged in for this)
     session.set_custom_location(latitude=50.879829, longitude=4.700540)
-    
-    # replace this with your own email and password!
-    #email = "example@gmail.com"
-    #password = "password123"
-
-
     email = Config['login']
     password = Config['password']
-    
     # login using your google account with a verified email!
     session.login_using_google(email, password)
-
-    # Alternatively you can login using facebook with a connected profile!
-    session.login_using_facebook(email, password)
-
-    # Alternatively, you can also use your phone number to login
-    '''
-    - country is needed to get the right prefix, in my case +32
-    - phone_number is everything after the prefix (+32)
-    NOTE: this is not my phone number :)
-    '''
-    country = "Belgium"
-    phone_number = "479011124"
-    session.login_using_sms(country, phone_number)
-
-    # spam likes, dislikes and superlikes
-    # to avoid being banned:
-    #   - it's best to apply a randomness in your liking by sometimes disliking.
-    #   - some sleeping between two actions is recommended
-    # by default the amount is 1, ratio 100% and sleep 1 second
     session.like(amount=10, ratio="72.5%", sleep=1)
     session.dislike(amount=1)
     session.superlike(amount=1)
-    
-    # adjust allowed distance for geomatches
-    # Note: PARAMETER IS IN KILOMETERS!
-    session.set_distance_range(km=150)
-
-    # set range of prefered age
-    session.set_age_range(18, 55)
-
-    # set interested in gender(s) -> options are: WOMEN, MEN, EVERYONE
-    session.set_sexuality(Sexuality.WOMEN)
+    session.set_distance_range(km=15)
+    session.set_age_range(18, 30)
 
     # Allow profiles from all over the world to appear
     session.set_global(True)
@@ -78,7 +39,7 @@ if __name__ == "__main__":
         session.store_local(match)
 
     # Pick up line with their personal name so it doesn't look spammy
-    pickup_line = "Hey {}! You. Me. Pizza? Or do you not like pizza?"
+    pickup_line = "Hey {}! Hast du Lust mit mit ne Pizza essen zu gehen oder magst du keine Pizza?"
 
     # loop through my new matches and send them the first message of the conversation
     for match in new_matches:
@@ -95,13 +56,13 @@ if __name__ == "__main__":
         session.send_message(chatid=id, message=message)
 
         # send a funny gif
-        session.send_gif(chatid=id, gifname="")
+        # session.send_gif(chatid=id, gifname="")
 
         # send a funny song
-        session.send_song(chatid=id, songname="")
+        # session.send_song(chatid=id, songname="")
 
         # send instagram or other socials like facebook, phonenumber and snapchat
-        session.send_socials(chatid=id, media=Socials.INSTAGRAM, value="Fredjemees")
+        # session.send_socials(chatid=id, media=Socials.INSTAGRAM, value="insta")
 
         # you can also unmatch
         #session.unmatch(chatid=id)
