@@ -5,6 +5,7 @@ Created by Frederikme (TeetiFM)
 #added comment
 from tinderbotz.session import Session
 from tinderbotz.helpers.constants_helper import *
+from tinderbotz.config import Config
 
 if __name__ == "__main__":
     # creates instance of session
@@ -18,8 +19,12 @@ if __name__ == "__main__":
     session.set_custom_location(latitude=50.879829, longitude=4.700540)
     
     # replace this with your own email and password!
-    email = "example@gmail.com"
-    password = "password123"
+    #email = "example@gmail.com"
+    #password = "password123"
+
+
+    email = Config['login']
+    password = Config['password']
     
     # login using your google account with a verified email!
     session.login_using_google(email, password)
