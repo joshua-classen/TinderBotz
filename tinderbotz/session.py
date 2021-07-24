@@ -225,7 +225,9 @@ class Session:
                     self.session_data['dislike'] += 1
 
                 self._handle_potential_popups()
-                time.sleep(sleep + random.randrange(1,1000) / 1000)
+                overallSleep = sleep + random.randrange(1,350) / 1000
+                print(overallSleep)
+                time.sleep(overallSleep)
 
             self._print_liked_stats()
 
