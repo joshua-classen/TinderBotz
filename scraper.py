@@ -3,6 +3,7 @@ Created by Frederikme (TeetiFM)
 '''
 import random, time
 from tinderbotz.session import Session
+from tinderbotz.config import Config
 
 if __name__ == "__main__":
 
@@ -12,9 +13,8 @@ if __name__ == "__main__":
     # set a custom location
     session.set_custom_location(latitude=50.879829, longitude=4.700540)
     
-    # replace this with your own email and password!
-    email = "example@gmail.com"
-    password = "password123"
+    email = Config['login']
+    password = Config['password']
     
     # login using your google account with a verified email! Alternatively, you can use Facebook login
     session.login_using_facebook(email, password)
