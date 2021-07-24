@@ -1,10 +1,30 @@
 {
-  "Hannover": {
+  "Hamburg": {
+    "latitude": 53.55361305079808,
+    "longitude": 9.984850105789686
+  },
+  "HannoverMitte": {
     "latitude": 52.378819111034474,
     "longitude": 9.744487362177003
   },
   "Bremen": {
     "latitude": 53.08269040738728,
     "longitude": 8.828931381918494
+  },
+  "Braunschweig": {
+    "latitude": 52.26534255990374,
+    "longitude": 10.515578260636184
+  },
+  "Hildesheim": {
+    "latitude": 52.156577450332286,
+    "longitude": 9.947549328337663
+  },
+  "Celle": {
+    "latitude": 52.6141361860921,
+    "longitude": 10.069089264354108
+  },
+  "Goettingen": {
+    "latitude": 51.535557736977935,
+    "longitude": 9.93647532452565
   }
 }
