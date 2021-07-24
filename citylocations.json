@@ -1,8 +1,4 @@
 {
-  "Hamburg": {
-    "latitude": 53.55361305079808,
-    "longitude": 9.984850105789686
-  },
   "HannoverMitte": {
     "latitude": 52.378819111034474,
     "longitude": 9.744487362177003
@@ -26,5 +22,9 @@
   "Goettingen": {
     "latitude": 51.535557736977935,
     "longitude": 9.93647532452565
+  },
+  "Hamburg": {
+    "latitude": 53.55361305079808,
+    "longitude": 9.984850105789686
   }
 }

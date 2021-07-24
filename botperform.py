@@ -29,9 +29,8 @@ if __name__ == "__main__":
 
     #todo: implement shuffle
 
-    timeToBeInCity = 10 + random.randint(0,10) #better do this over random amount of likes and dislikes
+    
     now = datetime.datetime.now()
-    print(now)
     minTimeStart = now.replace(hour=8, minute=0, second=0, microsecond=0)
     maxTimeStop = now.replace(hour=23, minute=0, second=0, microsecond=0)
 
@@ -45,10 +44,9 @@ if __name__ == "__main__":
             print("Setting location to " + city)
             session.set_custom_location(latitude=data[city]['latitude'], longitude=data[city]['longitude'])
             sleep(1)
-            session.like(amount=50, ratio="69.0%", sleep=random.randint(1,3))
-            session.dislike(amount=1)
+            session.like(amount=random.randint(40, 200), ratio="69.0%", sleep=random.randint(1,3))
             #session.superlike(amount=1)
-            waitTime = random.randint(1,60)
+            waitTime = random.randint(3,10)
             print("Wait " + str(waitTime) + " seconds to change location.")
             sleep(waitTime)
         # Getting matches takes a while, so recommended you load as much as possible from local storage
@@ -79,3 +77,4 @@ if __name__ == "__main__":
             session.send_message(chatid=id, message=message)
     
 
+    print("Now is not the right time for the bot")
