@@ -35,16 +35,16 @@ if __name__ == "__main__":
     maxTimeStop = now.replace(hour=23, minute=0, second=0, microsecond=0)
 
 
-    session.set_distance_range(km=10)
+    session.set_distance_range(km=150)
     session.set_age_range(18, 30)
-    session.set_global(True) # Allow profiles from all over the world to appear
+    # session.set_global(True) # Allow profiles from all over the world to appear
 
     while datetime.datetime.now() >= minTimeStart and datetime.datetime.now() <= maxTimeStop:
         for city in data:
             print("Setting location to " + city)
             session.set_custom_location(latitude=data[city]['latitude'], longitude=data[city]['longitude'])
             sleep(1)
-            session.like(amount=random.randint(40, 200), ratio="69.0%", sleep=random.randint(1,3))
+            session.like(amount=random.randint(10, 20), ratio="69.0%", sleep=random.randint(1,3))
             #session.superlike(amount=1)
             waitTime = random.randint(3,10)
             print("Wait " + str(waitTime) + " seconds to change location.")

@@ -212,6 +212,7 @@ class Session:
             self._handle_potential_popups()
             print("\nLiking profiles started.")
             while amount_liked < amount:
+                time.sleep(random.randrange(1,1000) / 1000)
                 if random.random() <= ratio:
                     if helper.like():
                         amount_liked += 1
