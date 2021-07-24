@@ -44,7 +44,7 @@ if __name__ == "__main__":
             print("Setting location to " + city)
             session.set_custom_location(latitude=data[city]['latitude'], longitude=data[city]['longitude'])
             sleep(1)
-            session.like(amount=random.randint(10, 20), ratio="69.0%", sleep=random.randint(1,3))
+            session.like(amount=random.randint(10, 20), ratio="69.0%", sleep=random.randint(1))
             #session.superlike(amount=1)
             waitTime = random.randint(3,10)
             print("Wait " + str(waitTime) + " seconds to change location.")
